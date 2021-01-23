@@ -20,9 +20,11 @@ public class Resposta {
 	}
 
 	public Integer receberStatusCode(Integer statusCode) {
-
 		return resposta.statusCode();
-
 	}
-
+	
+	public String salvarToken(String caminho) {
+		return resposta.jsonPath().get(caminho).toString();
+	}
+	
 }
