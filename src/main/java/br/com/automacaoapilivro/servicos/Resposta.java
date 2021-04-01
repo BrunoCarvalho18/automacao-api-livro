@@ -5,18 +5,26 @@ import io.restassured.response.ValidatableResponse;
 
 public class Resposta {
 	
-	private static Response resposta;
+	private Response resposta;
 
 	public Resposta(Response resposta) {
-		Resposta.resposta = resposta;
+		this.resposta = resposta;
 	}
 	
 	public Resposta() {
 		
 	}
+	
+	public String logarEvidencia() {
+		return "\nRESPONSE:\n".concat(getResponse().prettyPrint().toString());
+	}
 
 	public ValidatableResponse getResposta() {
 		return resposta.then().log().all();
+	}
+	
+	public Response getResponse() {
+		return resposta;
 	}
 
 	public Integer receberStatusCode(Integer statusCode) {

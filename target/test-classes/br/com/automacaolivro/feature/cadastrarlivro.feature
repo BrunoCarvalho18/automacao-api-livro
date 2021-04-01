@@ -6,7 +6,7 @@ Funcionalidade: Criar Livro
                 Eu como usuario gostaria
                 de cadastrar/criar um livro
 
-@criarlivro @post
+@criarlivro
 Esquema do Cenario: Criar um livro
        Dado que eu realize uma requisicao na API para criar o livro  "<userId>"  "<id>"  "<title>"  "<body>"
        Entao a API me retorna o status code 201
